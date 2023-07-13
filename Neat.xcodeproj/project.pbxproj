@@ -15,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD57C1152A60945B00D1C928 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		ADB94E272A55C022009F5F42 /* Neat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB94E2A2A55C022009F5F42 /* NeatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeatApp.swift; sourceTree = "<group>"; };
 		ADB94E2C2A55C022009F5F42 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +55,7 @@
 		ADB94E292A55C022009F5F42 /* Neat */ = {
 			isa = PBXGroup;
 			children = (
+				AD57C1152A60945B00D1C928 /* Info.plist */,
 				ADB94E2A2A55C022009F5F42 /* NeatApp.swift */,
 				ADB94E392A55C3D0009F5F42 /* LocationManager.swift */,
 				ADB94E2C2A55C022009F5F42 /* ContentView.swift */,
@@ -273,6 +275,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Neat/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs to access your location.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -313,6 +316,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Neat/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs to access your location.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
