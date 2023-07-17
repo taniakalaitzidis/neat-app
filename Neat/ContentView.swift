@@ -6,42 +6,52 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
-    @StateObject var locationDataManager = LocationDataManager()
+    @EnvironmentObject var locationManager: LocationManager
+    @State private var showPlaceLookUpSheet = false // boolean value to trigger when the sheet should be shown
+    @State var returnedPlace = Place(mapItem: MKMapItem()) // click on a search result and pass it back to our original screen
+    
     var body: some View {
-        ZStack {
-            Color("backgroundColor")
-                .ignoresSafeArea()
-            VStack {
-                HStack {
-                    Image("favicon")
-                    Image("tagline")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
+        NavigationStack {
+            ZStack {
+                Color("backgroundColor")
+                    .ignoresSafeArea()
+                VStack {
+                    HStack {
+                        Image("favicon")
+                        Image("tagline")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        Spacer()
+                    }
                     Spacer()
                 }
-                Spacer()
-            }
-            
-            VStack {
-                switch locationDataManager.locationManager.authorizationStatus {
-                case .authorizedWhenInUse:  // Location services are available.
-                    // Insert code here of what should happen when Location services are authorized
-                    Text("Your current location is:")
-                    Text("Latitude: \(locationDataManager.locationManager.location?.coordinate.latitude.description ?? "Error loading")")
-                    Text("Longitude: \(locationDataManager.locationManager.location?.coordinate.longitude.description ?? "Error loading")")
+                VStack (alignment: .leading) {
+                    Text("Location: \n\(locationManager.location?.coordinate.latitude ?? 0.0), \(locationManager.location?.coordinate.longitude ?? 0.0)")
+                        .padding(.bottom)
                     
-                case .restricted, .denied:  // Location services currently unavailable.
-                    // Insert code here of what should happen when Location services are NOT authorized
-                    Text("Current location data was restricted or denied.")
-                case .notDetermined:        // Authorization not determined yet.
-                    Text("Finding your location...")
-                    ProgressView()
-                default:
-                    ProgressView()
+                    Text("Returned Place: \nName: \(returnedPlace.name)\nAddress:\(returnedPlace.address)\nCoords: \(returnedPlace.latitude), \(returnedPlace.longitude)")
                 }
+                .foregroundColor(.white)
+                .padding()
+                .toolbar {
+                    ToolbarItem(placement: .bottomBar) {
+                        Button {
+                            showPlaceLookUpSheet.toggle()
+                        } label: {
+                            Image(systemName: "magnifyingglass")
+                            Text("Lookup Place")
+                        }
+                        .foregroundColor(.white)
+
+                    }
             }
+            }
+        }
+        .fullScreenCover(isPresented: $showPlaceLookUpSheet) {
+            PlaceLookupView(returnedPlace: $returnedPlace)
         }
     }
 }
@@ -49,5 +59,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(LocationManager())
     }
 }

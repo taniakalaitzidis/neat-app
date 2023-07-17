@@ -12,6 +12,9 @@
 		ADB94E2F2A55C022009F5F42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB94E2E2A55C022009F5F42 /* Assets.xcassets */; };
 		ADB94E332A55C023009F5F42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB94E322A55C023009F5F42 /* Preview Assets.xcassets */; };
 		ADB94E3A2A55C3D0009F5F42 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB94E392A55C3D0009F5F42 /* LocationManager.swift */; };
+		ADC1BF912A6595F8008600FB /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1BF902A6595F8008600FB /* PlaceViewModel.swift */; };
+		ADC1BF932A65960E008600FB /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1BF922A65960E008600FB /* Place.swift */; };
+		ADC1BF952A659655008600FB /* PlaceLookupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1BF942A659655008600FB /* PlaceLookupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		ADB94E302A55C023009F5F42 /* Neat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Neat.entitlements; sourceTree = "<group>"; };
 		ADB94E322A55C023009F5F42 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ADB94E392A55C3D0009F5F42 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		ADC1BF902A6595F8008600FB /* PlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewModel.swift; sourceTree = "<group>"; };
+		ADC1BF922A65960E008600FB /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		ADC1BF942A659655008600FB /* PlaceLookupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLookupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +63,11 @@
 			children = (
 				AD57C1152A60945B00D1C928 /* Info.plist */,
 				ADB94E2A2A55C022009F5F42 /* NeatApp.swift */,
+				ADC1BF922A65960E008600FB /* Place.swift */,
+				ADC1BF902A6595F8008600FB /* PlaceViewModel.swift */,
 				ADB94E392A55C3D0009F5F42 /* LocationManager.swift */,
 				ADB94E2C2A55C022009F5F42 /* ContentView.swift */,
+				ADC1BF942A659655008600FB /* PlaceLookupView.swift */,
 				ADB94E2E2A55C022009F5F42 /* Assets.xcassets */,
 				ADB94E302A55C023009F5F42 /* Neat.entitlements */,
 				ADB94E312A55C023009F5F42 /* Preview Content */,
@@ -144,9 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADC1BF912A6595F8008600FB /* PlaceViewModel.swift in Sources */,
 				ADB94E2D2A55C022009F5F42 /* ContentView.swift in Sources */,
+				ADC1BF952A659655008600FB /* PlaceLookupView.swift in Sources */,
 				ADB94E2B2A55C022009F5F42 /* NeatApp.swift in Sources */,
 				ADB94E3A2A55C3D0009F5F42 /* LocationManager.swift in Sources */,
+				ADC1BF932A65960E008600FB /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +288,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Neat/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App needs to access your location.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs to access your location.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -317,6 +330,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Neat/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App needs to access your location.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs to access your location.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
